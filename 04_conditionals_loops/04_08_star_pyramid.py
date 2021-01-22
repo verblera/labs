@@ -19,3 +19,11 @@ Hint: Think of nested for loops
 '''
 
 # not sure how it is different from the first exercises apart form taking a number from an user
+n = int(input('PLease type in a number: '))
+i = 1
+string = ''
+while n > 0:
+    string += '*' * i + '\n'
+    n -= 1
+    i += 1
+print(string)
