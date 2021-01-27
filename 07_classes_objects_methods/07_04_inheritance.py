@@ -1,4 +1,4 @@
-'''
+"""
 CLASSES AND INHERITANCE
 =======================
 
@@ -17,4 +17,40 @@ CLASSES AND INHERITANCE
     contain? What methods? What tricks can you use through inheritance?
     Any class attributes you could add?
 
-'''
+"""
+
+
+class Movie:
+
+    def __init__(self, year, title, status='to watch'):
+        self.year = year
+        self.title = title
+        self.status = status
+
+    def watched(self):
+        self.status = 'watched'
+
+
+class RomCom(Movie):
+
+    def __str__(self):
+        return f'"{self.title}" is a romantic comedy ({self.year}). {self.status}'
+
+
+class ActionMovie(Movie):
+
+    def __init__(self, year, title, status, pg=13):
+        super().__init__(year, title, status)
+        self.pg = pg
+
+    def __str__(self):
+        return f'"{self.title}" is an action movie ({self.status},{self.year}, rated {self.pg})'
+
+
+film_1 = RomCom(2013, 'Her', 'to watch')
+film_2 = RomCom(1999, 'She\'s All That', 'to watch')
+film_3 = ActionMovie(2018, 'Black Panther', 'watched')
+film_4 = ActionMovie(2019, 'Avengers', 'to watch')
+print(film_1)
+film_1.watched()
+print(film_1)

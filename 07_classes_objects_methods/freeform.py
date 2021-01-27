@@ -48,28 +48,3 @@ class Door:
         things = self.height + other.size
         return things
 
-
-door_1 = Door('open', 3)
-door_2 = Door('shut', 1)
-door_3 = Door('closed', 2.5)
-door_4 = Door()
-
-tangerine_1 = Tangerine('rotten', 'bitter')
-tangerine_2 = Tangerine('fresh', 'sweet')
-tangerine_3 = Tangerine('rotten', 'awful')
-
-table_1 = Table('wood', 1.1, 'bedside')
-table_2 = Table('metal', 0.9, 'dinner')
-table_3 = Table('wood', 1, 'dinner')
-
-print(door_4)
-door_4.status = 'shut'
-print(door_4)
-print(tangerine_2)
-tangerine_2.fresh, tangerine_2.taste = 'rotten', 'awful'
-print(tangerine_2, 'You should have eaten faster!')
-print(door_2)
-door_2.height = door_2.height * 2
-print(door_2)
-print('If you put a door on a table, the added height will be',
-      door_2.__add__(table_3))
