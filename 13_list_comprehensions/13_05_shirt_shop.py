@@ -8,5 +8,5 @@ Then open up your online shop ;)
 
 colors = ["neon orange", "spring green"]
 sizes = ["S", "M", "L"]
-shop = [color + ' ' + size for color in colors for size in sizes]
+shop = [f'{color} {size}' for color in colors for size in sizes]
 print(shop)
