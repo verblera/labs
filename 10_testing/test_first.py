@@ -12,4 +12,20 @@ because Python modules can't begin with a number.
 """
 
 import unittest
+import firststep
 
+
+class MyTest(unittest.TestCase):
+    pass
+
+
+def test_equality(self):
+    self.assertEqual(y, 225)
+
+
+def test_identity(self):
+    self.assertTrue((y > 0))
+
+
+if __name__ == '__main__':
+    unittest.main()
