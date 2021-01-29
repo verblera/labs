@@ -1,4 +1,4 @@
 """"getting values for tests"""
 
-x = 15
-y = 15 ** 2
+x = 25
+y = x ** 2

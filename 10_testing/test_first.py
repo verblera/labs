@@ -12,19 +12,23 @@ because Python modules can't begin with a number.
 """
 
 import unittest
-import firststep
+from firststep import y
 
 
 class MyTest(unittest.TestCase):
-    pass
 
+    def test_equality(self):
+        self.assertEqual(y, 625)
 
-def test_equality(self):
-    self.assertEqual(y, 225)
+    def test_more_than_zero(self):
+        self.assertTrue((y > 0))
 
+    def test_integer_or_not(self):
+        self.assertIsInstance(y, int)
+# failing test:
 
-def test_identity(self):
-    self.assertTrue((y > 0))
+    def test_identity(self):
+        self.assertIs(y, 625, msg=f'{y} is not 625')
 
 
 if __name__ == '__main__':
