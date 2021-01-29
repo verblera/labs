@@ -10,3 +10,6 @@ TIP:
 
 """
 
+import requests
+url = 'https://codingnomads.co/'
+print(requests.get(url).text)
