@@ -14,3 +14,5 @@ def summing(lists):
 list_ = [2, 6, 7, 9, 11, 23, 23]
 y = summing(list_)
 print(y)
+
+print(sum(num for num in list_))
