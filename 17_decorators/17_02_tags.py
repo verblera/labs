@@ -5,13 +5,15 @@ any specified HTML tag as an input - making it more general.
 """
 
 
-def tagging(msg, tag):
-    def wrapping():
-        return f'<{tag}> {msg} </{tag}>'
-    return wrapping
+def my_decorator2(func):
+    def wrapper(*args):
+        print(f"<{func(args)[0][1]}> {func(args)[0][0]} <\{func(args)[0][1]}>")
+    return wrapper
 
 
-string = input('Please, type in a sentence: ')
-tg = input('Please, type in an HTML tag you want: ')
-a = tagging(string, tg)
-print(a())
+@my_decorator2
+def insert(*args):
+    return args
+
+insert(input('Please, print in a sentence: '),
+       input('Please, print in a tag: '))
