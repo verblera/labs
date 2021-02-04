@@ -4,12 +4,15 @@ Write a decorator function that wraps text passed to it in a html <p> tag.
 """
 
 
-def p_tag(msg):
-    def wrapping():
-        return f'<p> {msg} </p>'
-    return wrapping
+def my_decorator(func):
+    def wrapper():
+        print(f"<p> {func()} </p>")
+    return wrapper
 
 
-string = input('Please, type in a sentence: ')
-a = p_tag(string)
-print(a())
+@my_decorator
+def hello():
+    return "Hello!"
+
+
+hello()
