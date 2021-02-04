@@ -7,7 +7,7 @@ any specified HTML tag as an input - making it more general.
 
 def my_decorator2(func):
     def wrapper(*args):
-        print(f"<{func(args)[0][1]}> {func(args)[0][0]} <\{func(args)[0][1]}>")
+        return f"<{func(args)[0][1]}> {func(args)[0][0]} <\{func(args)[0][1]}>"
     return wrapper
 
 
@@ -15,5 +15,5 @@ def my_decorator2(func):
 def insert(*args):
     return args
 
-insert(input('Please, print in a sentence: '),
-       input('Please, print in a tag: '))
+print(insert(input('Please, print in a sentence: '),
+       input('Please, print in a tag: ')))

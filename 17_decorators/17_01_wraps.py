@@ -6,7 +6,7 @@ Write a decorator function that wraps text passed to it in a html <p> tag.
 
 def my_decorator(func):
     def wrapper():
-        print(f"<p> {func()} </p>")
+        return f"<p> {func()} </p>"
     return wrapper
 
 
@@ -15,13 +15,13 @@ def hello():
     return "Hello!"
 
 
-hello()
+print(hello())
 
 
 # wrapping a user's input
 def my_decorator2(func):
     def wrapper(*args):
-        print(f"<p> {func(args)[0][0]} </p>")
+        return f"<p> {func(args)[0][0]} </p>"
     return wrapper
 
 
@@ -30,4 +30,4 @@ def insert(*args):
     return args
 
 
-insert(input('What do you want to wrap? '))
+print(insert(input('What do you want to wrap? ')))
