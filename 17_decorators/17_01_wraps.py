@@ -20,8 +20,8 @@ print(hello())
 
 # wrapping a user's input
 def my_decorator2(func):
-    def wrapper(*args):
-        return f"<p> {func(args)[0]} </p>"
+    def wrapper(a):
+        return f"<p> {func(a)} </p>"
     return wrapper
 
 
