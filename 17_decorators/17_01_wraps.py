@@ -20,14 +20,14 @@ print(hello())
 
 # wrapping a user's input
 def my_decorator2(func):
-    def wrapper(a):
-        return f"<p> {func(a)} </p>"
+    def wrapper(returned_value):
+        return f"<p> {func(returned_value)} </p>"
     return wrapper
 
 
 @my_decorator2
-def insert(a):
-    return a
+def insert(user_input):
+    return user_input
 
 
-print(insert(input('What do you want to wrap? ')))
+print(insert(input('What do you want to wrap in a p tag? ')))

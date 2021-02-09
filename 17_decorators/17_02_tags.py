@@ -4,17 +4,21 @@ any specified HTML tag as an input - making it more general.
 
 """
 
-
-def my_decorator2(func):
-    def wrapper(*args):
-        return f"<{func(args)[1]}> {func(args)[0]} <\{func(args)[1]}>"
-    return wrapper
-
-
-@my_decorator2
-def insert(a):
-    return a
+def tagging(tag):
+    def my_decorator2(func):
+        def wrapper(*args):
+            return f'<{tag}> {func(*args)} <\{tag}>'
+        return wrapper
+    return my_decorator2
 
 
-print(insert(input('Please, print in a sentence: '),
-       input('Please, print in a tag: ')))
+@tagging('strong')
+def strong(sentence):
+    return sentence
+
+@tagging('div')
+def div(a,b):
+    return a + b
+
+print(strong(input('Type in a sentence: ')))
+print(div('This is a division',' tag'))
