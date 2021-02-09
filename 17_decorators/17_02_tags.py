@@ -15,5 +15,6 @@ def my_decorator2(func):
 def insert(a):
     return a
 
+
 print(insert(input('Please, print in a sentence: '),
        input('Please, print in a tag: ')))
