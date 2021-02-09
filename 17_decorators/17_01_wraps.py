@@ -21,13 +21,13 @@ print(hello())
 # wrapping a user's input
 def my_decorator2(func):
     def wrapper(*args):
-        return f"<p> {func(args)[0][0]} </p>"
+        return f"<p> {func(args)[0]} </p>"
     return wrapper
 
 
 @my_decorator2
-def insert(*args):
-    return args
+def insert(a):
+    return a
 
 
 print(insert(input('What do you want to wrap? ')))
